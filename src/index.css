@@ -1,0 +1,83 @@
+@import url('./assets/fonts/synonym/synonym.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: #0E100F;
+    color: #E0DDC3;
+}
+
+.animate-line{
+    content: "";
+    position: absolute;
+    animation: animate 3s ease-out infinite;
+    left: -100%;
+}
+
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgba(224, 221, 195, 0.6);
+    opacity: 0;
+    z-index: 10000;
+    user-select: none;
+    pointer-events: none;
+}
+
+.clip-patgh-polygon{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@keyframes animate {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    0% {
+        left: -100%;
+    }
+}
+
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#9B9880, #9B9880);
+    background-size: 0 2px;
+    background-position: 0 105%;
+    background-repeat: no-repeat;
+    transition: background-size .3s ease-in-out;
+}
+
+
+.link-underline:hover {
+    background-size: 100% 2px;
+    background-position: 0 105%
+}
+
+.cursor{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.follower{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#9B9880, #9B9880);
+    border-radius: 50%;
+    opacity: 0.7;
+    user-select: none;
+    pointer-events: none;
+}
